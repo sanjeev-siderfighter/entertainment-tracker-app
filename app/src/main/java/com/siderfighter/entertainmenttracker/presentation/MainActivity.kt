@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker
+package com.siderfighter.entertainmenttracker.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
