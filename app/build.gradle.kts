@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -72,9 +73,22 @@ dependencies {
     // hilt
     implementation("com.google.dagger:hilt-android:2.46")
     kapt("com.google.dagger:hilt-android-compiler:2.46")
+
+    // room db
+    implementation("androidx.room:room-runtime:2.5.2")
+    annotationProcessor("androidx.room:room-compiler:2.5.2")
+    // To use Kotlin Symbol Processing (KSP)
+    ksp("androidx.room:room-compiler:2.5.2")
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:2.5.2")
+    // optional - Test helpers
+    testImplementation("androidx.room:room-testing:2.5.2")
+    // optional - Paging 3 Integration
+    implementation("androidx.room:room-paging:2.5.2")
 }
 
 // Allow references to generated code
 kapt {
     correctErrorTypes = true
+    useBuildCache = true
 }
