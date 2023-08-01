@@ -13,12 +13,7 @@ import dagger.hilt.components.SingletonComponent
 @Module
 class DataSourceModule {
     @Provides
-    fun provideEntertainmentTrackerDb(@ApplicationContext context: Context): EntertainmentTrackerDb {
-        return EntertainmentTrackerDb.getInstance(context)
-    }
-
-    @Provides
-    fun provideEntertainmentTrackerDao(db: EntertainmentTrackerDb): EntertainmentTrackerDao {
-        return db.entertainmentTrackerDao()
+    fun provideEntertainmentTrackerDao(@ApplicationContext context: Context): EntertainmentTrackerDao {
+        return EntertainmentTrackerDb.getInstance(context).entertainmentTrackerDao()
     }
 }
