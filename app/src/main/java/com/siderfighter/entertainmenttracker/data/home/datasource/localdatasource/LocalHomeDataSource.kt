@@ -2,8 +2,9 @@ package com.siderfighter.entertainmenttracker.data.home.datasource.localdatasour
 
 import com.siderfighter.entertainmenttracker.data.home.entity.Category
 import com.siderfighter.entertainmenttracker.roomdb.EntertainmentTrackerDao
+import javax.inject.Inject
 
-class LocalHomeDataSource(
+class LocalHomeDataSource @Inject constructor(
     private val entertainmentTrackerDao: EntertainmentTrackerDao
 ) : ILocalHomeDataSource {
     override suspend fun getAllCategories(): List<Category> {
