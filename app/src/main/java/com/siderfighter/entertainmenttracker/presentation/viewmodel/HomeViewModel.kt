@@ -31,6 +31,7 @@ class HomeViewModel @Inject constructor(
                     mCategoriesFlow.value = HomeUiStates.Loading
                 }
                 .catch {
+                    println("$LOG_TAG -> Error in categoriesFlow -> $it")
                     mCategoriesFlow.value = HomeUiStates.Error(throwable = it)
                 }
                 .collectLatest { categoriesList ->
