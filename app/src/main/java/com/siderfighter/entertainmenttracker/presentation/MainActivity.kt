@@ -11,10 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.siderfighter.entertainmenttracker.presentation.viewmodel.HomeViewModel
+import com.siderfighter.entertainmenttracker.presentation.homescreen.HomeViewModel
 import com.siderfighter.entertainmenttracker.ui.theme.EntertainmentTrackerTheme
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

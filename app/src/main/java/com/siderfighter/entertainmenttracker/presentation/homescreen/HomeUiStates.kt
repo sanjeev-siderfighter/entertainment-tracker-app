@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.presentation.uistate
+package com.siderfighter.entertainmenttracker.presentation.homescreen
 
 import com.siderfighter.entertainmenttracker.domain.home.entity.CategoryList
 
