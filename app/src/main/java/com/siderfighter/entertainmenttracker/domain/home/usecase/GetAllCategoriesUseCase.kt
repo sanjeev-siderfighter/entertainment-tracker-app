@@ -13,9 +13,11 @@ class GetAllCategoriesUseCase @Inject constructor(
     suspend operator fun invoke(): Flow<CategoryList> {
         val categoriesFlow = repository.getAllCategories()
         return categoriesFlow.transform { categories ->
-            categories.map {
-                Category(id = it.id, name = it.name)
-            }
+            emit(
+                CategoryList(categories = categories.map {
+                    Category(id = it.id, name = it.name)
+                })
+            )
         }
     }
 }
