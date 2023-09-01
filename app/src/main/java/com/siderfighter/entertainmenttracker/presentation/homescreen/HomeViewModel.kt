@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.siderfighter.entertainmenttracker.configs.ICoroutineDispatcherProvider
 import com.siderfighter.entertainmenttracker.domain.home.usecase.GetAllCategoriesUseCase
-import com.siderfighter.entertainmenttracker.presentation.homescreen.HomeUiStates
 import com.siderfighter.entertainmenttracker.utils.LOG_TAG
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,24 +20,24 @@ class HomeViewModel @Inject constructor(
     private val dipatcher: ICoroutineDispatcherProvider
 ) : ViewModel() {
 
-    private val mCategoriesFlow = MutableStateFlow<HomeUiStates>(HomeUiStates.Loading)
+    private val mCategoriesFlow = MutableStateFlow<HomeUiState>(HomeUiState.Loading)
     val categoriesFlow = mCategoriesFlow.asStateFlow()
 
     fun getAllCategories() {
         viewModelScope.launch(dipatcher.io) {
             getAllCategoriesUseCase()
                 .onStart {
-                    mCategoriesFlow.value = HomeUiStates.Loading
+                    mCategoriesFlow.value = HomeUiState.Loading
                 }
                 .catch {
                     println("$LOG_TAG -> Error in categoriesFlow -> $it")
-                    mCategoriesFlow.value = HomeUiStates.Error(throwable = it)
+                    mCategoriesFlow.value = HomeUiState.Error(throwable = it)
                 }
                 .collectLatest { categoriesList ->
                     mCategoriesFlow.value = if (categoriesList.categories.isEmpty()) {
-                        HomeUiStates.NoData
+                        HomeUiState.NoData
                     } else {
-                        HomeUiStates.Success(categoryList = categoriesList)
+                        HomeUiState.Success(categoryList = categoriesList)
                     }
                     println("$LOG_TAG -> categories = ${categoriesFlow.value}")
                 }
