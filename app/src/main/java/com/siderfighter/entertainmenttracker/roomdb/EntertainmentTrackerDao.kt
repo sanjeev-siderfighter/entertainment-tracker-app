@@ -8,5 +8,5 @@ import com.siderfighter.entertainmenttracker.applayers.data.categories.entity.Ca
 interface EntertainmentTrackerDao {
 
     @Query("SELECT * FROM category")
-    fun getAllCategories(): List<Category>
+    suspend fun getAllCategories(): List<Category>
 }
