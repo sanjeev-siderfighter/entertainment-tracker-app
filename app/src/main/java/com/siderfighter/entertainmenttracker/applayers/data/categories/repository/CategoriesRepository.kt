@@ -7,10 +7,10 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class CategoriesRepository @Inject constructor(
-    private val localHomeDataSource: ILocalCategoriesDataSource
+    private val localCategoriesDataSource: ILocalCategoriesDataSource
 ) : ICategoriesRepository {
     override suspend fun getAllCategories(): Flow<List<Category>> {
-        return localHomeDataSource.getAllCategories()
+        return localCategoriesDataSource.getAllCategories()
     }
 
 }
