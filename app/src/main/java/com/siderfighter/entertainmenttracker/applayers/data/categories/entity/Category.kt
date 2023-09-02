@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.data.categories.entity
+package com.siderfighter.entertainmenttracker.applayers.data.categories.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

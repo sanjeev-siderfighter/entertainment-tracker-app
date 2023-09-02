@@ -1,7 +1,6 @@
-package com.siderfighter.entertainmenttracker.presentation.homescreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.homescreen
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.fillMaxWidth

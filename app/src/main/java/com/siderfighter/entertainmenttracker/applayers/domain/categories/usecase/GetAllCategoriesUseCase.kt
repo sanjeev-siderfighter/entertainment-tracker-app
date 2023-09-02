@@ -1,8 +1,8 @@
-package com.siderfighter.entertainmenttracker.domain.categories.usecase
+package com.siderfighter.entertainmenttracker.applayers.domain.categories.usecase
 
-import com.siderfighter.entertainmenttracker.domain.categories.entity.Category
-import com.siderfighter.entertainmenttracker.domain.categories.entity.CategoryList
-import com.siderfighter.entertainmenttracker.domain.categories.repository.ICategoriesRepository
+import com.siderfighter.entertainmenttracker.applayers.domain.categories.entity.Category
+import com.siderfighter.entertainmenttracker.applayers.domain.categories.entity.CategoryList
+import com.siderfighter.entertainmenttracker.applayers.domain.categories.repository.ICategoriesRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.transform
 import javax.inject.Inject

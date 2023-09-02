@@ -1,10 +1,10 @@
-package com.siderfighter.entertainmenttracker.presentation.homescreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.homescreen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.siderfighter.entertainmenttracker.configs.ICoroutineDispatcherProvider
-import com.siderfighter.entertainmenttracker.domain.categories.usecase.GetAllCategoriesUseCase
-import com.siderfighter.entertainmenttracker.utils.LOG_TAG
+import com.siderfighter.entertainmenttracker.applayers.domain.categories.usecase.GetAllCategoriesUseCase
+import com.siderfighter.entertainmenttracker.applayers.utils.LOG_TAG
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

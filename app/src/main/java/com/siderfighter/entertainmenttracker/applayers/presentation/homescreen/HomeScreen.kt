@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.presentation.homescreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.homescreen
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview

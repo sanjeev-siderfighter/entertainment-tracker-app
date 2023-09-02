@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.presentation
+package com.siderfighter.entertainmenttracker.applayers.presentation
 
 import android.os.Bundle
 import android.widget.Toast
@@ -8,14 +8,11 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.siderfighter.entertainmenttracker.presentation.homescreen.HomeScreen
-import com.siderfighter.entertainmenttracker.presentation.homescreen.HomeUiState
-import com.siderfighter.entertainmenttracker.presentation.homescreen.HomeViewModel
-import com.siderfighter.entertainmenttracker.ui.theme.EntertainmentTrackerTheme
+import com.siderfighter.entertainmenttracker.applayers.presentation.homescreen.HomeScreen
+import com.siderfighter.entertainmenttracker.applayers.presentation.homescreen.HomeUiState
+import com.siderfighter.entertainmenttracker.applayers.presentation.homescreen.HomeViewModel
+import com.siderfighter.entertainmenttracker.applayers.presentation.ui.theme.EntertainmentTrackerTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,6 +1,6 @@
-package com.siderfighter.entertainmenttracker.data.categories.datasource
+package com.siderfighter.entertainmenttracker.applayers.data.categories.datasource
 
-import com.siderfighter.entertainmenttracker.data.categories.entity.Category
+import com.siderfighter.entertainmenttracker.applayers.data.categories.entity.Category
 import com.siderfighter.entertainmenttracker.roomdb.EntertainmentTrackerDao
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf

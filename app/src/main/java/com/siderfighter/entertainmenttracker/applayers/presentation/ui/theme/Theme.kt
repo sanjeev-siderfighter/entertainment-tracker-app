@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.ui.theme
+package com.siderfighter.entertainmenttracker.applayers.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

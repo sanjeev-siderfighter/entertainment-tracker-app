@@ -1,9 +1,9 @@
 package com.siderfighter.entertainmenttracker.di
 
-import com.siderfighter.entertainmenttracker.data.categories.datasource.ILocalCategoriesDataSource
-import com.siderfighter.entertainmenttracker.data.categories.datasource.LocalCategoriesDataSource
-import com.siderfighter.entertainmenttracker.data.categories.repository.CategoriesRepository
-import com.siderfighter.entertainmenttracker.domain.categories.repository.ICategoriesRepository
+import com.siderfighter.entertainmenttracker.applayers.data.categories.datasource.ILocalCategoriesDataSource
+import com.siderfighter.entertainmenttracker.applayers.data.categories.datasource.LocalCategoriesDataSource
+import com.siderfighter.entertainmenttracker.applayers.data.categories.repository.CategoriesRepository
+import com.siderfighter.entertainmenttracker.applayers.domain.categories.repository.ICategoriesRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.ui.theme
+package com.siderfighter.entertainmenttracker.applayers.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
