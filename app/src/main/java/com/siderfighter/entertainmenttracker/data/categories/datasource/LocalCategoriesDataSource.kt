@@ -1,14 +1,14 @@
-package com.siderfighter.entertainmenttracker.data.home.datasource.localdatasource
+package com.siderfighter.entertainmenttracker.data.categories.datasource
 
-import com.siderfighter.entertainmenttracker.data.home.entity.Category
+import com.siderfighter.entertainmenttracker.data.categories.entity.Category
 import com.siderfighter.entertainmenttracker.roomdb.EntertainmentTrackerDao
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import javax.inject.Inject
 
-class LocalHomeDataSource @Inject constructor(
+class LocalCategoriesDataSource @Inject constructor(
     private val entertainmentTrackerDao: EntertainmentTrackerDao
-) : ILocalHomeDataSource {
+) : ILocalCategoriesDataSource {
     override suspend fun getAllCategories(): Flow<List<Category>> {
         return flowOf(
             entertainmentTrackerDao.getAllCategories()

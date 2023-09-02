@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.domain.home.entity
+package com.siderfighter.entertainmenttracker.domain.categories.entity
 
 data class CategoryList(
     val categories: List<Category>

@@ -1,9 +1,9 @@
 package com.siderfighter.entertainmenttracker.di
 
-import com.siderfighter.entertainmenttracker.data.home.datasource.localdatasource.ILocalHomeDataSource
-import com.siderfighter.entertainmenttracker.data.home.datasource.localdatasource.LocalHomeDataSource
-import com.siderfighter.entertainmenttracker.data.home.repository.HomeRepository
-import com.siderfighter.entertainmenttracker.domain.home.repository.IHomeRepository
+import com.siderfighter.entertainmenttracker.data.categories.datasource.ILocalCategoriesDataSource
+import com.siderfighter.entertainmenttracker.data.categories.datasource.LocalCategoriesDataSource
+import com.siderfighter.entertainmenttracker.data.categories.repository.CategoriesRepository
+import com.siderfighter.entertainmenttracker.domain.categories.repository.ICategoriesRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -14,8 +14,8 @@ import dagger.hilt.android.components.ViewModelComponent
 @Module
 abstract class RepositoryModule {
     @Binds
-    abstract fun provideLocalHomeDataSource(localHomeDataSource: LocalHomeDataSource): ILocalHomeDataSource
+    abstract fun provideLocalHomeDataSource(localHomeDataSource: LocalCategoriesDataSource): ILocalCategoriesDataSource
 
     @Binds
-    abstract fun providesHomeRepository(homeRepository: HomeRepository): IHomeRepository
+    abstract fun providesHomeRepository(homeRepository: CategoriesRepository): ICategoriesRepository
 }

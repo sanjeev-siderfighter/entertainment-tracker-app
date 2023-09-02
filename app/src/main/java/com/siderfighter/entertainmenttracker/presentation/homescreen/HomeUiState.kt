@@ -1,6 +1,6 @@
 package com.siderfighter.entertainmenttracker.presentation.homescreen
 
-import com.siderfighter.entertainmenttracker.domain.home.entity.CategoryList
+import com.siderfighter.entertainmenttracker.domain.categories.entity.CategoryList
 
 sealed interface HomeUiState {
     data object Loading : HomeUiState
