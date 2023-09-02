@@ -85,6 +85,15 @@ dependencies {
     testImplementation("androidx.room:room-testing:2.5.2")
     // optional - Paging 3 Integration
     implementation("androidx.room:room-paging:2.5.2")
+
+    // tests
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+    //Mockk
+    testImplementation("io.mockk:mockk:1.13.7")
+    //Mockito
+    testImplementation("org.mockito:mockito-core:4.0.0")
+    testImplementation("org.mockito:mockito-inline:4.0.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
 }
 
 // Allow references to generated code
