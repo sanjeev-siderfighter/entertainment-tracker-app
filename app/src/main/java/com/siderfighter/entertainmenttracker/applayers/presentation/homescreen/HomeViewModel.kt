@@ -17,14 +17,14 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val getAllCategoriesUseCase: GetAllCategoriesUseCase,
-    private val dipatcher: ICoroutineDispatcherProvider
+    private val dispatcher: ICoroutineDispatcherProvider
 ) : ViewModel() {
 
     private val mCategoriesFlow = MutableStateFlow<HomeUiState>(HomeUiState.Loading)
     val categoriesFlow = mCategoriesFlow.asStateFlow()
 
     fun getAllCategories() {
-        viewModelScope.launch(dipatcher.io) {
+        viewModelScope.launch(dispatcher.io) {
             getAllCategoriesUseCase()
                 .onStart {
                     mCategoriesFlow.value = HomeUiState.Loading
