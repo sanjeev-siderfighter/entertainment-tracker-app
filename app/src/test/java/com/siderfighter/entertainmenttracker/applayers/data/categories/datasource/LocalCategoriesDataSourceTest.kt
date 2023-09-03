@@ -1,5 +1,6 @@
 package com.siderfighter.entertainmenttracker.applayers.data.categories.datasource
 
+import com.siderfighter.entertainmenttracker.applayers.data.categories.entity.Category
 import com.siderfighter.entertainmenttracker.applayers.utils.LOG_TAG
 import com.siderfighter.entertainmenttracker.roomdb.EntertainmentTrackerDao
 import com.siderfighter.entertainmenttracker.testutils.TestDispatcherProvider
@@ -54,5 +55,47 @@ class LocalCategoriesDataSourceTest {
 
         println("$LOG_TAG value = $value")
         assertTrue(value.isEmpty())
+    }
+
+    @Test
+    fun `test get category by name when category not present`() = runTest {
+        coEvery {
+            entertainmentTrackerDao.getCategoryByName("test")
+        } returns null
+
+        val sut = LocalCategoriesDataSource(
+            entertainmentTrackerDao = entertainmentTrackerDao,
+            dispatcher = testDispatcherProvider
+        )
+
+        val flow = sut.getCategoryByName("test")
+
+        advanceUntilIdle()
+
+        val value = flow.first()
+
+        println("$LOG_TAG test get by name when not prsent -> value = $value")
+        assertTrue(value == null)
+    }
+
+    @Test
+    fun `test get category by name when category is present`() = runTest {
+        coEvery {
+            entertainmentTrackerDao.getCategoryByName("test")
+        } returns "test"
+
+        val sut = LocalCategoriesDataSource(
+            entertainmentTrackerDao = entertainmentTrackerDao,
+            dispatcher = testDispatcherProvider
+        )
+
+        val flow = sut.getCategoryByName("test")
+
+        advanceUntilIdle()
+
+        val value = flow.first()
+
+        println("$LOG_TAG test get by name when not prsent -> value = $value")
+        assertTrue(value == "test")
     }
 }

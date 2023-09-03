@@ -13,4 +13,8 @@ class CategoriesRepository @Inject constructor(
         return localCategoriesDataSource.getAllCategories()
     }
 
+    override suspend fun getCategoryByName(name: String): Flow<String?> {
+        return localCategoriesDataSource.getCategoryByName(name = name)
+    }
+
 }

@@ -5,6 +5,6 @@ data class CategoryList(
 )
 
 data class Category(
-    val id: Int,
+    val id: Long,
     val name: String,
 )

@@ -17,4 +17,10 @@ class LocalCategoriesDataSource @Inject constructor(
             entertainmentTrackerDao.getAllCategories()
         ).flowOn(dispatcher.io)
     }
+
+    override suspend fun getCategoryByName(name: String): Flow<String?> {
+        return flowOf(
+            entertainmentTrackerDao.getCategoryByName(name = name)
+        ).flowOn(dispatcher.io)
+    }
 }

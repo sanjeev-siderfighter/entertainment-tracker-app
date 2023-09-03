@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.siderfighter.entertainmenttracker.applayers.presentation.addcategoryscreen.AddCategoryViewModel
 import com.siderfighter.entertainmenttracker.applayers.presentation.homescreen.HomeScreen
 import com.siderfighter.entertainmenttracker.applayers.presentation.homescreen.HomeUiState
 import com.siderfighter.entertainmenttracker.applayers.presentation.homescreen.HomeViewModel
@@ -18,7 +19,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val viewModel: HomeViewModel by viewModels()
+    private val homeViewModel: HomeViewModel by viewModels()
+    private val addCategoryViewModel: AddCategoryViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +42,6 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun getAllCategories() {
-        viewModel.getAllCategories()
+        homeViewModel.getAllCategories()
     }
 }

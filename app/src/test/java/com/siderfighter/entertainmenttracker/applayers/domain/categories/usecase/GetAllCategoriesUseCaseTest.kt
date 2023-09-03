@@ -50,7 +50,7 @@ class GetAllCategoriesUseCaseTest {
 
         println("$LOG_TAG result = $result")
         assertTrue(
-            result.categories.size == 1 && result.categories[0].name == "test" && result.categories[0].id == 1
+            result.categories.size == 1 && result.categories[0].name == "test" && result.categories[0].id == 1L
         )
     }
 }

@@ -47,4 +47,21 @@ class CategoriesRepositoryTest {
         println("$LOG_TAG value = $value")
         assert(value.isEmpty())
     }
+
+    @Test
+    fun `test get category by name`() = runTest {
+        coEvery {
+            localCategoriesDataSource.getCategoryByName("test")
+        } returns flowOf(null)
+
+        val sut = CategoriesRepository(localCategoriesDataSource)
+
+        val flow = sut.getCategoryByName(name = "test")
+
+        advanceUntilIdle()
+
+        val value = flow.first()
+        println("$LOG_TAG test get category by name -> value = $value")
+        assert(value == null)
+    }
 }
