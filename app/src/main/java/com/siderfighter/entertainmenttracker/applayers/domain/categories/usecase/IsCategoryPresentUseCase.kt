@@ -13,5 +13,8 @@ class IsCategoryPresentUseCase @Inject constructor(
         return categoryFlow.transform { category ->
             emit(category == categoryName)
         }
+//        return categoryFlow.map { category ->
+//            category == categoryName
+//        }
     }
 }

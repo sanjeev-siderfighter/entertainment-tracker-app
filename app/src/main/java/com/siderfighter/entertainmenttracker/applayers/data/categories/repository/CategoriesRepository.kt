@@ -17,4 +17,8 @@ class CategoriesRepository @Inject constructor(
         return localCategoriesDataSource.getCategoryByName(name = name)
     }
 
+    override suspend fun addNewCategory(name: String): Flow<Long?> {
+        return localCategoriesDataSource.addNewCategory(name = name)
+    }
+
 }

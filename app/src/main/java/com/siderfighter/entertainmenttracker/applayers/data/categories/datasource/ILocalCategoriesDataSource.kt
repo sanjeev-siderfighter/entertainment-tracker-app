@@ -7,4 +7,6 @@ interface ILocalCategoriesDataSource {
     suspend fun getAllCategories(): Flow<List<Category>>
 
     suspend fun getCategoryByName(name: String): Flow<String?>
+
+    suspend fun addNewCategory(name: String): Flow<Long?>
 }

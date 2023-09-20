@@ -23,4 +23,11 @@ class LocalCategoriesDataSource @Inject constructor(
             entertainmentTrackerDao.getCategoryByName(name = name)
         ).flowOn(dispatcher.io)
     }
+
+    override suspend fun addNewCategory(name: String): Flow<Long?> {
+        val category = Category(name = name)
+        return flowOf(
+            entertainmentTrackerDao.addCategory(category = category)
+        )
+    }
 }
