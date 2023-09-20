@@ -1,6 +1,7 @@
 package com.siderfighter.entertainmenttracker.applayers.domain.categories.usecase
 
 import com.siderfighter.entertainmenttracker.applayers.data.categories.repository.CategoriesRepository
+import com.siderfighter.entertainmenttracker.applayers.domain.categories.entity.AddCategoryState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flatMapConcat
 import kotlinx.coroutines.flow.flowOf
@@ -11,15 +12,19 @@ class AddNewCategoryUseCase @Inject constructor(
     private val categoriesRepository: CategoriesRepository,
     private val isCategoryPresentUseCase: IsCategoryPresentUseCase
 ) {
-    suspend operator fun invoke(categoryName: String): Flow<Boolean> {
+    suspend operator fun invoke(categoryName: String): Flow<AddCategoryState> {
         return isCategoryPresentUseCase(categoryName = categoryName)
             .flatMapConcat { isPresent ->
                 if (!isPresent) {
                     categoriesRepository.addNewCategory(name = categoryName).map { rowId ->
-                        rowId != null
+                        if (rowId != null) {
+                            AddCategoryState.Success
+                        } else {
+                            AddCategoryState.FailedToAddCategory
+                        }
                     }
                 } else {
-                    flowOf(false)
+                    flowOf(AddCategoryState.CategoryAlreadyExists)
                 }
             }
     }

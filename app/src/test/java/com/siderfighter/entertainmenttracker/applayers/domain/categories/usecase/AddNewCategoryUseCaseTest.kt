@@ -1,6 +1,7 @@
 package com.siderfighter.entertainmenttracker.applayers.domain.categories.usecase
 
 import com.siderfighter.entertainmenttracker.applayers.data.categories.repository.CategoriesRepository
+import com.siderfighter.entertainmenttracker.applayers.domain.categories.entity.AddCategoryState
 import com.siderfighter.entertainmenttracker.testutils.TestDispatcherProvider
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
@@ -42,7 +43,7 @@ class AddNewCategoryUseCaseTest {
     }
 
     @Test
-    fun `test add new category when category is already present`() = runTest {
+    fun `test add new category when category is already present - should return CategoryAlreadyExists`() = runTest {
         coEvery {
             isCategoryPresentUseCase(any())
         } returns flowOf(true)
@@ -54,11 +55,11 @@ class AddNewCategoryUseCaseTest {
         advanceUntilIdle()
 
         val result = resultFlow.firstOrNull()
-        Assert.assertTrue(result == false)
+        Assert.assertTrue(result == AddCategoryState.CategoryAlreadyExists)
     }
 
     @Test
-    fun `test add new category when category is not present and added successfully`() = runTest {
+    fun `test add new category when category is not present and added successfully - should return Success`() = runTest {
         coEvery {
             isCategoryPresentUseCase(any())
         } returns flowOf(false)
@@ -75,11 +76,11 @@ class AddNewCategoryUseCaseTest {
 
         val result = resultFlow.firstOrNull()
         println("starWanderer -> result = $result")
-        Assert.assertTrue(result == true)
+        Assert.assertTrue(result == AddCategoryState.Success)
     }
 
     @Test
-    fun `test add new category when category is not present and not added successfully`() =
+    fun `test add new category when category is not present and not added successfully - should return FailedToAddCategory`() =
         runTest {
             coEvery {
                 isCategoryPresentUseCase(any())
@@ -97,6 +98,6 @@ class AddNewCategoryUseCaseTest {
 
             val result = resultFlow.firstOrNull()
             println("starWanderer -> result = $result")
-            Assert.assertTrue(result == false)
+            Assert.assertTrue(result == AddCategoryState.FailedToAddCategory)
         }
 }

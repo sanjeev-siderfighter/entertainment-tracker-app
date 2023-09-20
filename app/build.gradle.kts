@@ -90,6 +90,8 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
     //Mockk
     testImplementation("io.mockk:mockk:1.13.7")
+    //turbine
+    testImplementation("app.cash.turbine:turbine:1.0.0")
     //Mockito
     testImplementation("org.mockito:mockito-core:4.0.0")
     testImplementation("org.mockito:mockito-inline:4.0.0")
