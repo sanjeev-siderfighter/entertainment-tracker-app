@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.siderfighter.entertainmenttracker.applayers.data.categories.entity.Category
 
-@Database(entities = [Category::class], version = 1)
+@Database(entities = [Category::class], version = 1, exportSchema = false)
 abstract class EntertainmentTrackerDb : RoomDatabase() {
     abstract fun entertainmentTrackerDao(): EntertainmentTrackerDao
 
