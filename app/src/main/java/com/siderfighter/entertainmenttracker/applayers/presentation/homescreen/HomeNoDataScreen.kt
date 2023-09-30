@@ -20,10 +20,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.siderfighter.entertainmentprogress.R
 
 @Composable
-fun HomeNoDataScreen(modifier: Modifier = Modifier, onButtonClick: () -> Unit) {
+fun HomeNoDataScreen(modifier: Modifier = Modifier, navController: NavController) {
     Column(
         modifier = modifier
             .width(IntrinsicSize.Min)
@@ -46,7 +48,7 @@ fun HomeNoDataScreen(modifier: Modifier = Modifier, onButtonClick: () -> Unit) {
                 .fillMaxWidth()
                 .padding(horizontal = 32.dp),
         ) {
-            onButtonClick()
+//            onButtonClick()
         }
     }
 }
@@ -88,7 +90,7 @@ private fun ButtonComponent(modifier: Modifier = Modifier, onClick: () -> Unit) 
 @Preview(showSystemUi = true)
 @Composable
 private fun HomeNoDataScreenPreview() {
-    HomeNoDataScreen {}
+    HomeNoDataScreen(navController = rememberNavController())
 }
 
 @Preview(showSystemUi = true)

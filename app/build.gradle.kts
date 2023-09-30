@@ -73,6 +73,9 @@ dependencies {
     // compose lifecycle
     implementation("androidx.lifecycle:lifecycle-runtime-compose")
 
+    // lottie compose
+    implementation("com.airbnb.android:lottie-compose:6.1.0")
+
     // compose navigation
     implementation("androidx.navigation:navigation-compose:2.7.3")
 
