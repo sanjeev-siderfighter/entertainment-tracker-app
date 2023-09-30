@@ -11,23 +11,12 @@ import com.siderfighter.entertainmentprogress.R
 
 @Composable
 fun HomeLoader() {
-    /*
-    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.loading))
-    val progress by animateLottieCompositionAsState(composition)
-    LottieAnimation(
-        composition = composition,
-        progress = { progress },
-    )
-     */
-
     val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.loader_lottie))
     LottieAnimation(
         composition = composition,
         restartOnPlay = false,
         iterations = LottieConstants.IterateForever
     )
-//    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.loader_lottie))
-//    LottieAnimation(composition)
 }
 
 @Preview(showSystemUi = true)
