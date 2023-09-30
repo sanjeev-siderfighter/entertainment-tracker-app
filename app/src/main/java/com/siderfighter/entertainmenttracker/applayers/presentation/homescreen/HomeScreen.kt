@@ -17,11 +17,10 @@ fun HomeScreen(
 
     if (homeUiState is HomeUiState.NoData) {
         onNoData()
+        HomeNoDataScreen(
+            onButtonClick = { viewModel.getAllCategories() }
+        )
     }
-
-    HomeNoDataScreen(
-        onButtonClick = { viewModel.getAllCategories() }
-    )
 }
 
 @Preview(showSystemUi = true)
