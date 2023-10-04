@@ -11,6 +11,9 @@ class GetAllCategoriesUseCase @Inject constructor(
     private val repository: ICategoriesRepository
 ) {
     suspend operator fun invoke(): Flow<CategoryList> {
+        val exception = Exception("finding stacktrace")
+        val stackTrace = exception.stackTrace
+        println("starWanderer -> stackTrace = ${stackTrace[0]}")
         val categoriesFlow = repository.getAllCategories()
         return categoriesFlow.transform { categories ->
             emit(

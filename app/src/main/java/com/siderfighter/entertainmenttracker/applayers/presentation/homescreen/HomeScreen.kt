@@ -2,6 +2,7 @@ package com.siderfighter.entertainmenttracker.applayers.presentation.homescreen
 
 import android.widget.Toast
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
@@ -20,7 +21,9 @@ fun HomeScreen(
 
     val homeUiState by viewModel.categoriesFlow.collectAsStateWithLifecycle()
 
-    viewModel.getAllCategories()
+    LaunchedEffect(Unit) {
+        viewModel.getAllCategories()
+    }
     Toast.makeText(context, "$homeUiState", Toast.LENGTH_SHORT).show()
 
     when (homeUiState) {
@@ -36,10 +39,4 @@ fun HomeScreen(
             Toast.makeText(context, "$homeUiState", Toast.LENGTH_SHORT).show()
         }
     }
-}
-
-@Preview(showSystemUi = true)
-@Composable
-private fun HomeScreenPreview() {
-    HomeScreen(navController = rememberNavController())
 }
