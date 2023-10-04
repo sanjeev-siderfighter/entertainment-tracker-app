@@ -7,6 +7,7 @@ import com.siderfighter.entertainmenttracker.applayers.domain.categories.usecase
 import com.siderfighter.entertainmenttracker.applayers.utils.LOG_TAG
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
@@ -23,7 +24,11 @@ class HomeViewModel @Inject constructor(
     private val mCategoriesFlow = MutableStateFlow<HomeUiState>(HomeUiState.Loading)
     val categoriesFlow = mCategoriesFlow.asStateFlow()
 
-    fun getAllCategories() {
+    init {
+        getAllCategories()
+    }
+
+    private fun getAllCategories() {
         viewModelScope.launch(dispatcher.io) {
             getAllCategoriesUseCase()
                 .onStart {

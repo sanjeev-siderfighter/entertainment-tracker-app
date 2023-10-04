@@ -5,6 +5,7 @@ import com.siderfighter.entertainmenttracker.applayers.domain.categories.usecase
 import com.siderfighter.entertainmenttracker.applayers.utils.LOG_TAG
 import com.siderfighter.entertainmenttracker.testutils.CATEGORY_LIST_OBJECT
 import com.siderfighter.entertainmenttracker.testutils.TestDispatcherProvider
+import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
@@ -26,6 +27,7 @@ class HomeViewModelTest {
 
     @Before
     fun setUp() {
+        MockKAnnotations.init(this, overrideRecordPrivateCalls = true)
         Dispatchers.setMain(testDispatcherProvider.testDispatcher)
     }
 
@@ -65,7 +67,7 @@ class HomeViewModelTest {
             getAllCategoriesUseCase = getAllCategoriesUseCase
         )
 
-        sut.getAllCategories()
+//        sut.getAllCategories()
 
         advanceUntilIdle()
 
@@ -85,7 +87,7 @@ class HomeViewModelTest {
             getAllCategoriesUseCase = getAllCategoriesUseCase
         )
 
-        sut.getAllCategories()
+//        sut.getAllCategories()
 
         advanceUntilIdle()
 
@@ -105,7 +107,7 @@ class HomeViewModelTest {
             getAllCategoriesUseCase = getAllCategoriesUseCase
         )
 
-        sut.getAllCategories()
+//        sut.getAllCategories()
 
         advanceUntilIdle()
 
