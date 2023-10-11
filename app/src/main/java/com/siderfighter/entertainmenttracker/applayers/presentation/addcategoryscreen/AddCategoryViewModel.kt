@@ -48,4 +48,11 @@ class AddCategoryViewModel @Inject constructor(
             AddCategoryState.Success -> AddCategoryUiState.Success
         }
     }
+
+    // validate category name if categoryName is empty return CategoryNameValidationState.Empty, if it contains special characters then return CategoryNameValidationState.Invalid otherwise CategoryNameValidationState.Valid
+    fun validateCategoryName(categoryName: String): CategoryNameValidationState {
+        return if (categoryName.isEmpty()) CategoryNameValidationState.Empty
+        else if (categoryName.contains(Regex("[^a-zA-Z0-9 ]"))) CategoryNameValidationState.Invalid
+        else CategoryNameValidationState.Valid
+    }
 }

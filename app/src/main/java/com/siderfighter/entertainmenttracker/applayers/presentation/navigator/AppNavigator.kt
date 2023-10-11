@@ -72,10 +72,11 @@ private fun NavGraphBuilder.categoryGraph(
             exitTransition = {
                 fadeOut() + slideOutOfContainer(
                     animationSpec = tween(ANIMATION_DURATION_MILLIS, easing = EaseOut),
-                    towards = AnimatedContentTransitionScope.SlideDirection.End
+                    towards = AnimatedContentTransitionScope.SlideDirection.Start
                 )
-            }) {
-            AddCategoryScreen(onConfirmed = onCategoryAdded)
+            },
+        ) {
+            AddCategoryScreen(navController = navController, onConfirmed = onCategoryAdded)
         }
 
         composable(
@@ -89,7 +90,7 @@ private fun NavGraphBuilder.categoryGraph(
             exitTransition = {
                 fadeOut() + slideOutOfContainer(
                     animationSpec = tween(ANIMATION_DURATION_MILLIS, easing = EaseOut),
-                    towards = AnimatedContentTransitionScope.SlideDirection.End
+                    towards = AnimatedContentTransitionScope.SlideDirection.Start
                 )
             }) {
             HomeNoDataScreen(navController = navController)

@@ -31,7 +31,7 @@ fun HomeScreen(
         }
 
         is HomeUiState.Loading -> {
-            HomeLoader()
+            AppLoader()
         }
 
         else -> {

@@ -10,7 +10,7 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import com.siderfighter.entertainmentprogress.R
 
 @Composable
-fun HomeLoader() {
+fun AppLoader() {
     val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.loader_lottie))
     LottieAnimation(
         composition = composition,
@@ -22,5 +22,5 @@ fun HomeLoader() {
 @Preview(showSystemUi = true)
 @Composable
 private fun HomeLoaderScreenPreview() {
-    HomeLoader()
+    AppLoader()
 }
