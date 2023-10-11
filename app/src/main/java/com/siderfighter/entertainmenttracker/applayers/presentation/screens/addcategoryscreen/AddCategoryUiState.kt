@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.applayers.presentation.addcategoryscreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.screens.addcategoryscreen
 
 sealed interface AddCategoryUiState {
     data object Loading : AddCategoryUiState

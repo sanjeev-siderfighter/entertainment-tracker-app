@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.applayers.presentation.homescreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.commoncomponent
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue

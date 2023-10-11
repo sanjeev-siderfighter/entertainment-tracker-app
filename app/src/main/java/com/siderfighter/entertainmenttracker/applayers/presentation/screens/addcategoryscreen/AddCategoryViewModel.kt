@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.applayers.presentation.addcategoryscreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.screens.addcategoryscreen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

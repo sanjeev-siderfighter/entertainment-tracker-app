@@ -15,9 +15,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
-import com.siderfighter.entertainmenttracker.applayers.presentation.addcategoryscreen.AddCategoryScreen
-import com.siderfighter.entertainmenttracker.applayers.presentation.homescreen.HomeNoDataScreen
-import com.siderfighter.entertainmenttracker.applayers.presentation.homescreen.HomeScreen
+import com.siderfighter.entertainmenttracker.applayers.presentation.screens.addcategoryscreen.AddCategoryScreen
+import com.siderfighter.entertainmenttracker.applayers.presentation.screens.nodata.HomeNoDataScreen
+import com.siderfighter.entertainmenttracker.applayers.presentation.screens.homescreen.HomeScreen
 
 private const val ANIMATION_DURATION_MILLIS = 500
 

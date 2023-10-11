@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.applayers.presentation.homescreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.screens.homescreen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

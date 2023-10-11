@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.applayers.presentation.homescreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.screens.homescreen
 
 import android.widget.Toast
 import androidx.compose.runtime.Composable
@@ -9,6 +9,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
+import com.siderfighter.entertainmenttracker.applayers.presentation.commoncomponent.AppLoader
 import com.siderfighter.entertainmenttracker.applayers.presentation.navigator.AppRoutes
 import com.siderfighter.entertainmenttracker.applayers.utils.LOG_TAG
 

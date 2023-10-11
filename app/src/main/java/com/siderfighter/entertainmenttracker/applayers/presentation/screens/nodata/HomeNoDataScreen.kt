@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.applayers.presentation.homescreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.screens.nodata
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column

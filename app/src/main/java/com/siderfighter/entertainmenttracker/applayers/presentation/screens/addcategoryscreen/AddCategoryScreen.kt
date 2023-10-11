@@ -1,6 +1,5 @@
-package com.siderfighter.entertainmenttracker.applayers.presentation.addcategoryscreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.screens.addcategoryscreen
 
-import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.tween
@@ -26,7 +25,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -34,7 +32,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.siderfighter.entertainmentprogress.R
-import com.siderfighter.entertainmenttracker.applayers.presentation.homescreen.AppLoader
+import com.siderfighter.entertainmenttracker.applayers.presentation.commoncomponent.AppLoader
 import com.siderfighter.entertainmenttracker.applayers.presentation.ui.theme.BlackOpacity75
 
 @Composable
