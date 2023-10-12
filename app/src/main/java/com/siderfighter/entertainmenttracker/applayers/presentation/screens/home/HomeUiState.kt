@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.applayers.presentation.screens.homescreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.screens.home
 
 import com.siderfighter.entertainmenttracker.applayers.domain.categories.entity.CategoryList
 

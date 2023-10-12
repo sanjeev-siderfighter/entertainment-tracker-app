@@ -1,18 +1,16 @@
 package com.siderfighter.entertainmenttracker.applayers.presentation.addcategoryscreen
 
 import app.cash.turbine.test
-import app.cash.turbine.testIn
 import com.siderfighter.entertainmenttracker.applayers.domain.categories.entity.AddCategoryState
 import com.siderfighter.entertainmenttracker.applayers.domain.categories.usecase.AddNewCategoryUseCase
-import com.siderfighter.entertainmenttracker.applayers.presentation.screens.addcategoryscreen.AddCategoryUiState
-import com.siderfighter.entertainmenttracker.applayers.presentation.screens.addcategoryscreen.AddCategoryViewModel
+import com.siderfighter.entertainmenttracker.applayers.presentation.screens.addcategory.AddCategoryUiState
+import com.siderfighter.entertainmenttracker.applayers.presentation.screens.addcategory.AddCategoryViewModel
 import com.siderfighter.entertainmenttracker.testutils.TestDispatcherProvider
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
 import io.mockk.unmockkAll
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.toList

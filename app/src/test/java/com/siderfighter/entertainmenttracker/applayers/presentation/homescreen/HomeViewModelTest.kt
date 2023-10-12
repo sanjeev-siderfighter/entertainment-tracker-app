@@ -2,8 +2,8 @@ package com.siderfighter.entertainmenttracker.applayers.presentation.homescreen
 
 import com.siderfighter.entertainmenttracker.applayers.domain.categories.entity.CategoryList
 import com.siderfighter.entertainmenttracker.applayers.domain.categories.usecase.GetAllCategoriesUseCase
-import com.siderfighter.entertainmenttracker.applayers.presentation.screens.homescreen.HomeUiState
-import com.siderfighter.entertainmenttracker.applayers.presentation.screens.homescreen.HomeViewModel
+import com.siderfighter.entertainmenttracker.applayers.presentation.screens.home.HomeUiState
+import com.siderfighter.entertainmenttracker.applayers.presentation.screens.home.HomeViewModel
 import com.siderfighter.entertainmenttracker.applayers.utils.LOG_TAG
 import com.siderfighter.entertainmenttracker.testutils.CATEGORY_LIST_OBJECT
 import com.siderfighter.entertainmenttracker.testutils.TestDispatcherProvider

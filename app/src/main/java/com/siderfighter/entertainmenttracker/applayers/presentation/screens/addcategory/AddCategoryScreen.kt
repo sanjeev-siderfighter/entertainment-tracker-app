@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.applayers.presentation.screens.addcategoryscreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.screens.addcategory
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing

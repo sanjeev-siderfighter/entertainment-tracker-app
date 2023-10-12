@@ -1,4 +1,4 @@
-package com.siderfighter.entertainmenttracker.applayers.presentation.screens.homescreen
+package com.siderfighter.entertainmenttracker.applayers.presentation.screens.home
 
 import android.widget.Toast
 import androidx.compose.runtime.Composable
