@@ -40,7 +40,6 @@ fun AddCategoryScreen(
     modifier: Modifier = Modifier,
     navController: NavController,
     viewModel: AddCategoryViewModel = hiltViewModel(),
-    onConfirmed: (category: String) -> Unit
 ) {
     val addCategoryState by viewModel.addCategoryFlow.collectAsStateWithLifecycle(initialValue = null)
 
@@ -66,10 +65,8 @@ fun AddCategoryScreen(
                 modifier = modifier.padding(16.dp),
                 validate = { categoryName ->
                     viewModel.validateCategoryName(categoryName = categoryName)
-                },
-                onConfirmed = onConfirmed,
-                onButtonClick = { categoryName, categoryChapter -> /*viewModel.testAddCategory(categoryName = categoryName)*/ }
-            )
+                }
+            ) { categoryName, categoryChapter -> /*viewModel.testAddCategory(categoryName = categoryName)*/ }
         }
     }
 }
@@ -78,7 +75,6 @@ fun AddCategoryScreen(
 fun AddCategoryCompose(
     modifier: Modifier = Modifier,
     validate: (input: String) -> CategoryNameValidationState,
-    onConfirmed: (category: String) -> Unit,
     onButtonClick: (categoryName: String, categoryChapter: String) -> Unit
 ) {
     var categoryName by remember { mutableStateOf("") }
@@ -213,10 +209,8 @@ fun TextFieldWithErrorMessage(
 @Composable
 private fun AddCategoryComposePreview() {
     AddCategoryCompose(
-        validate = { CategoryNameValidationState.Valid },
-        onButtonClick = { _, _ -> },
-        onConfirmed = {}
-    )
+        validate = { CategoryNameValidationState.Valid }
+    ) { _, _ -> }
 }
 
 @Preview(showSystemUi = false)

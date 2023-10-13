@@ -1,7 +1,6 @@
 package com.siderfighter.entertainmenttracker.applayers.presentation
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -26,14 +25,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    AppNavigator(
-                        onCategoryAdded = { category ->
-                            Toast.makeText(
-                                this,
-                                "category $category has been added",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        })
+                    AppNavigator()
                 }
             }
         }

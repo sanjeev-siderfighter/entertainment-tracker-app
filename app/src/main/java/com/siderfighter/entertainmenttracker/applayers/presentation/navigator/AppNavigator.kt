@@ -22,7 +22,7 @@ import com.siderfighter.entertainmenttracker.applayers.presentation.splash.Splas
 private const val ANIMATION_DURATION_MILLIS = 500
 
 @Composable
-fun AppNavigator(onCategoryAdded: (category: String) -> Unit) {
+fun AppNavigator() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
@@ -30,14 +30,11 @@ fun AppNavigator(onCategoryAdded: (category: String) -> Unit) {
         enterTransition = { EnterTransition.None },
         exitTransition = { ExitTransition.None }
     ) {
-        categoryGraph(navController, onCategoryAdded)
+        categoryGraph(navController)
     }
 }
 
-private fun NavGraphBuilder.categoryGraph(
-    navController: NavController,
-    onCategoryAdded: (category: String) -> Unit
-) {
+private fun NavGraphBuilder.categoryGraph(navController: NavController) {
     navigation(
         startDestination = HomeRoutes.SplashRoute.route,
         route = FeatureRoutes.CategoryFeatureRoute.route,
@@ -75,7 +72,7 @@ private fun NavGraphBuilder.categoryGraph(
                 )
             }
         ) {
-            AddCategoryScreen(navController = navController, onConfirmed = onCategoryAdded)
+            AddCategoryScreen(navController = navController)
         }
 
         composable(
