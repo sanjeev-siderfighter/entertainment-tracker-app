@@ -17,12 +17,12 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
 import com.siderfighter.entertainmenttracker.applayers.presentation.screens.addcategory.AddCategoryScreen
 import com.siderfighter.entertainmenttracker.applayers.presentation.screens.nodata.HomeNoDataScreen
-import com.siderfighter.entertainmenttracker.applayers.presentation.screens.home.HomeScreen
+import com.siderfighter.entertainmenttracker.applayers.presentation.splash.SplashScreen
 
 private const val ANIMATION_DURATION_MILLIS = 500
 
 @Composable
-fun AppNavigator(onNoData: () -> Unit, onCategoryAdded: (category: String) -> Unit) {
+fun AppNavigator(onCategoryAdded: (category: String) -> Unit) {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
@@ -30,39 +30,26 @@ fun AppNavigator(onNoData: () -> Unit, onCategoryAdded: (category: String) -> Un
         enterTransition = { EnterTransition.None },
         exitTransition = { ExitTransition.None }
     ) {
-        categoryGraph(navController, onNoData, onCategoryAdded)
+        categoryGraph(navController, onCategoryAdded)
     }
 }
 
 private fun NavGraphBuilder.categoryGraph(
     navController: NavController,
-    onNoData: () -> Unit,
     onCategoryAdded: (category: String) -> Unit
 ) {
     navigation(
-        startDestination = AppRoutes.HomeRoute.route,
+        startDestination = HomeRoutes.SplashRoute.route,
         route = FeatureRoutes.CategoryFeatureRoute.route,
     ) {
         composable(
-            route = AppRoutes.HomeRoute.route,
-            enterTransition = {
-                fadeIn() + slideIntoContainer(
-                    animationSpec = tween(ANIMATION_DURATION_MILLIS, easing = EaseIn),
-                    towards = AnimatedContentTransitionScope.SlideDirection.Start
-                )
-            },
-            exitTransition = {
-                fadeOut() + slideOutOfContainer(
-                    animationSpec = tween(ANIMATION_DURATION_MILLIS, easing = EaseOut),
-                    towards = AnimatedContentTransitionScope.SlideDirection.End
-                )
-            }
+            route = HomeRoutes.SplashRoute.route
         ) {
-            HomeScreen(navController = navController)
+            SplashScreen(navController = navController)
         }
 
         composable(
-            route = AppRoutes.AddCategoryRoute.route,
+            route = HomeRoutes.AddCategoryRoute.route,
             enterTransition = {
                 fadeIn() + slideIntoContainer(
                     animationSpec = tween(ANIMATION_DURATION_MILLIS, easing = EaseIn),
@@ -75,12 +62,24 @@ private fun NavGraphBuilder.categoryGraph(
                     towards = AnimatedContentTransitionScope.SlideDirection.Start
                 )
             },
+            popEnterTransition = {
+                fadeIn() + slideIntoContainer(
+                    animationSpec = tween(ANIMATION_DURATION_MILLIS, easing = EaseIn),
+                    towards = AnimatedContentTransitionScope.SlideDirection.End
+                )
+            },
+            popExitTransition = {
+                fadeOut() + slideOutOfContainer(
+                    animationSpec = tween(ANIMATION_DURATION_MILLIS, easing = EaseOut),
+                    towards = AnimatedContentTransitionScope.SlideDirection.End,
+                )
+            }
         ) {
             AddCategoryScreen(navController = navController, onConfirmed = onCategoryAdded)
         }
 
         composable(
-            route = AppRoutes.HomeNoDataRoute.route,
+            route = HomeRoutes.HomeNoDataRoute.route,
             enterTransition = {
                 fadeIn() + slideIntoContainer(
                     animationSpec = tween(ANIMATION_DURATION_MILLIS, easing = EaseIn),
@@ -92,7 +91,20 @@ private fun NavGraphBuilder.categoryGraph(
                     animationSpec = tween(ANIMATION_DURATION_MILLIS, easing = EaseOut),
                     towards = AnimatedContentTransitionScope.SlideDirection.Start
                 )
-            }) {
+            },
+            popEnterTransition = {
+                fadeIn() + slideIntoContainer(
+                    animationSpec = tween(ANIMATION_DURATION_MILLIS, easing = EaseIn),
+                    towards = AnimatedContentTransitionScope.SlideDirection.End
+                )
+            },
+            popExitTransition = {
+                fadeOut() + slideOutOfContainer(
+                    animationSpec = tween(ANIMATION_DURATION_MILLIS, easing = EaseOut),
+                    towards = AnimatedContentTransitionScope.SlideDirection.Start
+                )
+            }
+        ) {
             HomeNoDataScreen(navController = navController)
         }
     }

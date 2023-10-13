@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.siderfighter.entertainmentprogress.R
-import com.siderfighter.entertainmenttracker.applayers.presentation.navigator.AppRoutes
+import com.siderfighter.entertainmenttracker.applayers.presentation.navigator.HomeRoutes
 
 @Composable
 fun HomeNoDataScreen(modifier: Modifier = Modifier, navController: NavController) {
@@ -49,7 +49,7 @@ fun HomeNoDataScreen(modifier: Modifier = Modifier, navController: NavController
                 .fillMaxWidth()
                 .padding(horizontal = 32.dp),
         ) {
-            navController.navigate(AppRoutes.AddCategoryRoute.route)
+            navController.navigate(HomeRoutes.AddCategoryRoute.route)
         }
     }
 }

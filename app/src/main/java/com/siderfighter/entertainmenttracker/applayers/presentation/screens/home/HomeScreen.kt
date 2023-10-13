@@ -10,7 +10,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.siderfighter.entertainmenttracker.applayers.presentation.commoncomponent.AppLoader
-import com.siderfighter.entertainmenttracker.applayers.presentation.navigator.AppRoutes
+import com.siderfighter.entertainmenttracker.applayers.presentation.navigator.HomeRoutes
 import com.siderfighter.entertainmenttracker.applayers.utils.LOG_TAG
 
 @Composable
@@ -27,7 +27,7 @@ fun HomeScreen(
         is HomeUiState.NoData -> {
             LaunchedEffect(key1 = homeUiState) { // wrapping in LaunchedEffect since it involves transition animation
                 println("$LOG_TAG when NoData")
-                navController.navigate(AppRoutes.HomeNoDataRoute.route)
+                navController.navigate(HomeRoutes.HomeNoDataRoute.route)
             }
         }
 

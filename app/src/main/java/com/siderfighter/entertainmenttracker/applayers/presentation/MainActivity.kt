@@ -27,9 +27,6 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     AppNavigator(
-                        onNoData = {
-                            Toast.makeText(this, "on no data", Toast.LENGTH_SHORT).show()
-                        },
                         onCategoryAdded = { category ->
                             Toast.makeText(
                                 this,
