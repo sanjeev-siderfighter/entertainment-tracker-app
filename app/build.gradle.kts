@@ -77,7 +77,7 @@ dependencies {
     implementation("com.airbnb.android:lottie-compose:6.1.0")
 
     // compose navigation
-    implementation("androidx.navigation:navigation-compose:2.7.3")
+    implementation("androidx.navigation:navigation-compose:2.7.4")
 
     // compose viewmodel
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose")
@@ -88,16 +88,16 @@ dependencies {
     ksp("com.google.dagger:hilt-compiler:2.48")
 
     // room db
-    implementation("androidx.room:room-runtime:2.5.2")
-    annotationProcessor("androidx.room:room-compiler:2.5.2")
+    implementation("androidx.room:room-runtime:2.6.0")
+    annotationProcessor("androidx.room:room-compiler:2.6.0")
     // To use Kotlin Symbol Processing (KSP)
-    ksp("androidx.room:room-compiler:2.5.2")
+    ksp("androidx.room:room-compiler:2.6.0")
     // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:2.5.2")
+    implementation("androidx.room:room-ktx:2.6.0")
     // optional - Test helpers
-    testImplementation("androidx.room:room-testing:2.5.2")
+    testImplementation("androidx.room:room-testing:2.6.0")
     // optional - Paging 3 Integration
-    implementation("androidx.room:room-paging:2.5.2")
+    implementation("androidx.room:room-paging:2.6.0")
 
     // tests
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
