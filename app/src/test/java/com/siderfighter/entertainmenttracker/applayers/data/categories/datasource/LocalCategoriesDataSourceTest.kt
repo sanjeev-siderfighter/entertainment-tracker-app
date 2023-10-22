@@ -1,6 +1,5 @@
 package com.siderfighter.entertainmenttracker.applayers.data.categories.datasource
 
-import com.siderfighter.entertainmenttracker.applayers.data.categories.entity.Category
 import com.siderfighter.entertainmenttracker.applayers.utils.LOG_TAG
 import com.siderfighter.entertainmenttracker.roomdb.EntertainmentTrackerDao
 import com.siderfighter.entertainmenttracker.testutils.TestDispatcherProvider
@@ -8,6 +7,7 @@ import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
@@ -39,12 +39,11 @@ class LocalCategoriesDataSourceTest {
     fun `test get all categories`() = runTest {
         coEvery {
             entertainmentTrackerDao.getAllCategories()
-        } returns emptyList()
+        } returns flowOf(emptyList())
 //        Mockito.`when`(entertainmentTrackerDao.getAllCategories()).doReturn(listOf())
 
         val sut = LocalCategoriesDataSource(
-            entertainmentTrackerDao = entertainmentTrackerDao,
-            dispatcher = testDispatcherProvider
+            entertainmentTrackerDao = entertainmentTrackerDao
         )
 
         val flow = sut.getAllCategories()
@@ -61,11 +60,10 @@ class LocalCategoriesDataSourceTest {
     fun `test get category by name when category not present`() = runTest {
         coEvery {
             entertainmentTrackerDao.getCategoryByName("test")
-        } returns null
+        } returns flowOf(null)
 
         val sut = LocalCategoriesDataSource(
-            entertainmentTrackerDao = entertainmentTrackerDao,
-            dispatcher = testDispatcherProvider
+            entertainmentTrackerDao = entertainmentTrackerDao
         )
 
         val flow = sut.getCategoryByName("test")
@@ -82,11 +80,10 @@ class LocalCategoriesDataSourceTest {
     fun `test get category by name when category is present`() = runTest {
         coEvery {
             entertainmentTrackerDao.getCategoryByName("test")
-        } returns "test"
+        } returns flowOf("test")
 
         val sut = LocalCategoriesDataSource(
-            entertainmentTrackerDao = entertainmentTrackerDao,
-            dispatcher = testDispatcherProvider
+            entertainmentTrackerDao = entertainmentTrackerDao
         )
 
         val flow = sut.getCategoryByName("test")
